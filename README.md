@@ -1,7 +1,7 @@
 ## Cloning TekTutor Openshift Training Repository (RPS Cloud Linux Machine Terminal )
 ```
 cd ~
-git clone https://github.com/tektutor/openshift-3june-2024.git
+git clone https://github.com/tektutor/openshift-tekton-june2024.git
 cd openshift-3june-2024
 ```
 
