@@ -2,7 +2,7 @@
 ```
 cd ~
 git clone https://github.com/tektutor/openshift-tekton-june2024.git
-cd openshift-3june-2024
+cd openshift-tekton-june2024
 ```
 
 ## About our lab environment
