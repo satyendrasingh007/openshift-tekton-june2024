@@ -178,3 +178,10 @@ master-3.ocp4.tektutor.org.labs   Ready    control-plane,master,worker   7d5h   
 worker-1.ocp4.tektutor.org.labs   Ready    worker                        7d5h   v1.28.9+416ecaf
 worker-2.ocp4.tektutor.org.labs   Ready    worker                        7d5h   v1.28.9+416ecaf  
 </pre>
+
+## Lab - How does the kubectl and oc client know how to communicate with openshift cluster
+```
+oc get nodes
+kubectl get nodes
+```
+oc and kubectl clients makes a REST API Call to API Server running in the master nodes ( master-1, master2 and master3 )
