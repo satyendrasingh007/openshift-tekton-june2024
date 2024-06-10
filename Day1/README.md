@@ -66,4 +66,28 @@
 - the reason why many of us tend to compare a container with a virtual machine
   - just like virtual machine acquire one or more IP addresses, containers also gets its own dedicated IP address
   - just like virtual machine has file system, containers also has its own file system
-  - just like virtual machine with linux distributions supports package managers, linux containers also has their own package managers ( apt/apt-get,rpm,yum,dnf )
+  - just like virtual machine with linux distributions supports package managers, linux containers also has their
+  - own package managers ( apt/apt-get,rpm,yum,dnf )
+  - just like virtual machine, the containers also has their own port range ( 0 - 65535 )
+
+## What is a container runtime?
+- is a low-level software that manages the container images and containers
+- not user-friendly, hence normally engineers won't directly use the container runtime
+- examples
+  - runC container runtime
+  - CRI-O container runtime
+
+## What is a container engine?
+- high-level softwares
+- very user-friendly, offers easy to use commands to manage container images and container life-cycle
+- internally they depend on container runtime to manage container images and container life-cycle
+- examples
+  - Docker Container Engine depends on containerd which in turn depends on runc container runtime
+  - Podman Container engine depends on CRI-O Container Runtime
+ 
+## What is Container Image?
+- Container Image is similar to OS Image - Ubuntu-16-04.iso
+- Using container Images we can create multiple containers
+- Container Images comes with some pre-installed software tools like package managers, ls, cp,rm, etc.,
+- though container images are named as OS names, they don't represent an Operating System
+- through container images we can only create containers which are application process that runs in a separate namespace
