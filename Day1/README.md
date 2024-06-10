@@ -145,7 +145,7 @@
 ![deployment](deployment.png)
 
 ## Info - Kubernetes High-Level Architecture
-![k8s](k8sArchitecture.png)
+![k8s](K8sArchitecture.png)
 
 ## Lab - Listing the nodes in the Openshift cluster
 ```
