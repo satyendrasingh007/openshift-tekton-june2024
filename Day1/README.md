@@ -142,7 +142,7 @@
 - Deployment is Kubernetes/Openshift resource managed by Deployment Controller
 - Deployment has one to many ReplicaSets
 - For each version of a container image, one ReplicaSet will be created within Deployment
-
+![deployment](deployment.png)
 
 ## Lab - Listing the nodes in the Openshift cluster
 ```
