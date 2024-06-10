@@ -126,9 +126,8 @@
 - Pod gets it own IP address
 - all the containers that are part of a single Pod, shares the same IP Address and ports
 - recommended best practice is one main application per Pod
+![pod](pod.png)
 
-Expected output
-  
 ## ReplicaSet Overview
 - Let's say we wish to run many instances of our application
 - supports scale up (running many instances of same application)
