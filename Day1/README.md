@@ -126,8 +126,37 @@
 - Pod gets it own IP address
 - all the containers that are part of a single Pod, shares the same IP Address and ports
 - recommended best practice is one main application per Pod
+
 Expected output
   
 ## ReplicaSet Overview
+- Let's say we wish to run many instances of our application
+- supports scale up (running many instances of same application)
+- supports scale down ( deleting unwanted extra pod instance of aour application)
+- is a Kubernetes/Openshift resource managed by ReplicaSet Controller
+- ReplicaSet has one to many Pods
 
 ## Deployment Overview
+- This represents our application
+- the deployment will have an unique name and id
+- the name is user-defined, the id is auto-assigned by Deployment Controller
+- Deployment is Kubernetes/Openshift resource managed by Deployment Controller
+- Deployment has one to many ReplicaSets
+- For each version of a container image, one ReplicaSet will be created within Deployment
+
+
+## Lab - Listing the nodes in the Openshift cluster
+```
+oc get nodes
+```
+
+Expected output
+<pre>
+jegan@tektutor.org $ oc get nodes
+NAME                              STATUS   ROLES                         AGE    VERSION
+master-1.ocp4.tektutor.org.labs   Ready    control-plane,master,worker   7d5h   v1.28.9+416ecaf
+master-2.ocp4.tektutor.org.labs   Ready    control-plane,master,worker   7d5h   v1.28.9+416ecaf
+master-3.ocp4.tektutor.org.labs   Ready    control-plane,master,worker   7d5h   v1.28.9+416ecaf
+worker-1.ocp4.tektutor.org.labs   Ready    worker                        7d5h   v1.28.9+416ecaf
+worker-2.ocp4.tektutor.org.labs   Ready    worker                        7d5h   v1.28.9+416ecaf  
+</pre>
