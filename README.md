@@ -24,3 +24,9 @@ cd openshift-tekton-june2024
 - Linux Server 1 ( 192.168.1.22 ) - Openshift cluster 1 ( 7 participants - user01 thru user07 )
 - Linux Server 2 ( 192.168.1.23 ) - Openshift cluster 2 ( 7 participants - user08 thru user14 )
 - Linux Server 3 ( 192.168.1.24 ) - openshift cluster 3 ( 7 participants - user15 thru user21 )
+
+
+## Lab Machine URL
+<pre>
+Https://labs.dmrtechcloud.com  
+</pre>
