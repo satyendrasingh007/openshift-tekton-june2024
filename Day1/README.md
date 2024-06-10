@@ -160,3 +160,21 @@ master-3.ocp4.tektutor.org.labs   Ready    control-plane,master,worker   7d5h   
 worker-1.ocp4.tektutor.org.labs   Ready    worker                        7d5h   v1.28.9+416ecaf
 worker-2.ocp4.tektutor.org.labs   Ready    worker                        7d5h   v1.28.9+416ecaf  
 </pre>
+
+In the command above, oc is the openshift's client tool.
+
+We could use the kubernetes client in openshift
+```
+kubectl get nodes
+```
+
+Expected output
+<pre>
+jegan@tektutor.org $ kubectl get nodes
+NAME                              STATUS   ROLES                         AGE    VERSION
+master-1.ocp4.tektutor.org.labs   Ready    control-plane,master,worker   7d5h   v1.28.9+416ecaf
+master-2.ocp4.tektutor.org.labs   Ready    control-plane,master,worker   7d5h   v1.28.9+416ecaf
+master-3.ocp4.tektutor.org.labs   Ready    control-plane,master,worker   7d5h   v1.28.9+416ecaf
+worker-1.ocp4.tektutor.org.labs   Ready    worker                        7d5h   v1.28.9+416ecaf
+worker-2.ocp4.tektutor.org.labs   Ready    worker                        7d5h   v1.28.9+416ecaf  
+</pre>
