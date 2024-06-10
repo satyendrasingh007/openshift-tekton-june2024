@@ -144,6 +144,9 @@
 - For each version of a container image, one ReplicaSet will be created within Deployment
 ![deployment](deployment.png)
 
+## Info - Kubernetes High-Level Architecture
+![k8s](k8sArchitecture.png)
+
 ## Lab - Listing the nodes in the Openshift cluster
 ```
 oc get nodes
