@@ -97,6 +97,15 @@
 2. etcd key-value data-store (database)
 3. scheduler
 4. controller managers
+- collection of many controllers
+- Examples
+  - Deployment Controller
+  - ReplicaSet Controller
+  - Job Controller
+  - DaemonSet Controller
+  - StatefulSet Controller
+  - CronJob Controller
+  - EndPoint Controller
 - the control plane components runs only in master node
 - the control plane components is the one which supports the Container Orchestration features
 - the control plane helps in deploy our containerized applications
@@ -107,3 +116,18 @@
   - upgrading our appliction from one version to other without any downtime
 - control plane with the help of kube-proxy supports in-built load balancing to our application workloads
 - control plane with the help of core-dns supports service discovery
+
+## Pod Overview
+- a group of related containers
+- within the Pod container, application will be running
+- is a JSON/YAML Definition which is stored in the etcd database
+- is a Kubernetes/Openshift resource
+- the smallest unit that can be deployed within Kubernetes/Openshift
+- Pod gets it own IP address
+- all the containers that are part of a single Pod, shares the same IP Address and ports
+- recommended best practice is one main application per Pod
+Expected output
+  
+## ReplicaSet Overview
+
+## Deployment Overview
