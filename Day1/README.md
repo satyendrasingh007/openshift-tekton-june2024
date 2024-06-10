@@ -147,6 +147,9 @@
 ## Info - Kubernetes High-Level Architecture
 ![k8s](K8sArchitecture.png)
 
+## Info - Red Hat OpenShift Architecture
+![openshift](openshiftArchitecture.png)
+
 ## Lab - Listing the nodes in the Openshift cluster
 ```
 oc get nodes
