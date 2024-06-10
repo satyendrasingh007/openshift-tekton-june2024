@@ -91,3 +91,19 @@
 - Container Images comes with some pre-installed software tools like package managers, ls, cp,rm, etc.,
 - though container images are named as OS names, they don't represent an Operating System
 - through container images we can only create containers which are application process that runs in a separate namespace
+
+## What are the Control Plane Components?
+1. API Server
+2. etcd key-value data-store (database)
+3. scheduler
+4. controller managers
+- the control plane components runs only in master node
+- the control plane components is the one which supports the Container Orchestration features
+- the control plane helps in deploy our containerized applications
+- the control plane helps in monitoring the health of our deployed application, repairs them on-demand, replaces with new applications instance when required
+- the control plane also makes our application High Availability (HA)
+- control planes supports scaling up/down our application based on user-traffic
+- control plane supports rolling updates
+  - upgrading our appliction from one version to other without any downtime
+- control plane with the help of kube-proxy supports in-built load balancing to our application workloads
+- control plane with the help of core-dns supports service discovery
