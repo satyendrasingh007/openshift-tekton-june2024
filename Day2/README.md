@@ -102,7 +102,7 @@ oc get deploy
 
 Listing the replicasets
 ```
-oc get replicaset
+oc get replicasets
 oc get replicaset
 oc get rs
 ```
