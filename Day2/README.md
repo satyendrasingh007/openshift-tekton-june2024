@@ -135,3 +135,12 @@ oc get deploy,rs,po
 
 Expected output
 ![deploy](deploy3.png)
+
+
+## Lab - Deploying nginx web server using bitnami rootless image
+```
+oc create deployment nginx --image=bitnami/nginx:1.18 --replicas=3
+oc get deploy,rs,po
+```
+Expected output
+![deploy](deploy4.png)
