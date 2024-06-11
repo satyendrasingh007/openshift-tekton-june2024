@@ -52,3 +52,22 @@ Open your webconsole link from Google Chrome web browser on the CentOS Lab Machi
 ![login](login3.png)
 ![login](login4.png)
 ![login](login5.png)
+
+
+## Lab - Create a new project
+```
+oc new-project jegan
+```
+
+Listing the projects
+```
+oc get projects
+oc get project
+oc get namespaces
+oc get namespace
+oc get ns
+```
+
+Expected output
+![namespace](project1.png)
+![namespace](project2.png)
