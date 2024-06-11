@@ -84,3 +84,35 @@ oc project jegan
 
 Expected output
 ![project](project3.png)
+
+## Lab - Deploying your first application
+nginx is a web server image that will be downloaded from Docker Hub Remote Registry by Openshift
+```
+oc create deployment nginx --image=nginx:latest
+```
+
+In the above command, nginx is the user-defined deployment name and nginx:latest is the docker image that will be downloaded from Docker Hub.
+
+Listing the deployments
+```
+oc get deployments
+oc get deployment
+oc get deploy
+```
+
+Listing the replicasets
+```
+oc get replicaset
+oc get replicaset
+oc get rs
+```
+
+Listing the pods
+```
+oc get pods
+oc get pod
+oc get po
+```
+
+Expected output
+![deployment](deploy1.png)
