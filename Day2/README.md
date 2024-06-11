@@ -117,6 +117,15 @@ oc get po
 Expected output
 ![deployment](deploy1.png)
 
+Troubleshooting - checking the pod logs
+```
+oc get po
+oc logs nginx-56fcf95486-dmzxk
+```
+
+Expected output
+![deployment](deploy2.png)
+
 ## Lab - Deleting nginx deployment
 ```
 oc get deploy
@@ -125,4 +134,4 @@ oc get deploy,rs,po
 ```
 
 Expected output
-![deploy](deploy2.png)
+![deploy](deploy3.png)
