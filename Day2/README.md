@@ -144,3 +144,21 @@ oc get deploy,rs,po
 ```
 Expected output
 ![deploy](deploy4.png)
+
+## Lab - Deep dive into deployment
+```
+oc get deploy
+oc describe deploy/nginx
+
+oc get rs
+oc describe rs/nginx-566b5879cb
+
+oc get po
+oc describe po/nginx-566b5879cb-sl4bd
+```
+
+Expected output
+![deploy](deploy5.png)
+![deploy](deploy6.png)
+![deploy](deploy7.png)
+![deploy](deploy8.png)
