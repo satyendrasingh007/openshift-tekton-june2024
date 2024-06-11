@@ -1,5 +1,12 @@
 # Day 2
 
+## Info - SOLID Design Principles
+S - Single Responsibility Principle (SRP)
+O - Open Closed Principle (OCP)
+L - Liskov Substitution Principle (LSP)
+I - Interface Seggration Principle
+D - Dependency Injection or Dependency Inversion or Inversion of Control (IOC)
+
 ## Lab - Finding more details about a node
 ```
 oc get nodes
