@@ -55,6 +55,8 @@ Open your webconsole link from Google Chrome web browser on the CentOS Lab Machi
 
 
 ## Lab - Create a new project
+
+Replace 'jegan' with your name
 ```
 oc new-project jegan
 ```
