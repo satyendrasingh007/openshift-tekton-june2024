@@ -31,6 +31,20 @@ Expected output
 cat ~/openshift.txt
 oc login -u kubeadmin
 ```
+Expected output
+![login](login1.png)
+
+
+## Lab - OpenShift Webconsole login
+```
+cat ~/openshift.txt
+```
+
+Open your webconsole link from Google Chrome web browser on the CentOS Lab Machine
+![login](login2.png)
+![login](login3.png)
+![login](login4.png)
+![login](login5.png)
 
 Expected output
 ![login](login1.png)
