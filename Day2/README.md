@@ -17,3 +17,11 @@ oc edit node/worker-1.ocp4.tektutor.org.labs
 Expected output
 ![node](node2.png)
 ![node](node3.png)
+
+## Lab - Using wide mode to find node IP and OS installed
+```
+oc get nodes -o wide
+```
+
+Expected output
+![node](node4.png)
