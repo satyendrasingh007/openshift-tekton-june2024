@@ -162,3 +162,23 @@ Expected output
 ![deploy](deploy6.png)
 ![deploy](deploy7.png)
 ![deploy](deploy8.png)
+
+## Lab - Getting inside a node shell from terminal ( please don't make any changes )
+```
+oc debug node/master-1.ocp4.tektutor.org.labs
+oc debug node/master-2.ocp4.tektutor.org.labs
+oc debug node/master-3.ocp4.tektutor.org.labs
+oc debug node/worker-1.ocp4.tektutor.org.labs
+oc debug node/worker-2.ocp4.tektutor.org.labs
+chroot /host
+exit
+exit
+```
+
+## Lab - Accessing the etcd database content in one of the master nodes
+```
+
+```
+
+Expected output
+![etcd](etcd1.png)
