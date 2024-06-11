@@ -25,3 +25,12 @@ oc get nodes -o wide
 
 Expected output
 ![node](node4.png)
+
+## Lab - Login to openshift from commandline
+```
+cat ~/openshift.txt
+oc login -u kubeadmin
+```
+
+Expected output
+![login](login1.png)
