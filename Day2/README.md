@@ -45,6 +45,3 @@ Open your webconsole link from Google Chrome web browser on the CentOS Lab Machi
 ![login](login3.png)
 ![login](login4.png)
 ![login](login5.png)
-
-Expected output
-![login](login1.png)
