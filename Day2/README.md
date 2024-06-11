@@ -73,3 +73,14 @@ oc get ns
 Expected output
 ![namespace](project1.png)
 ![namespace](project2.png)
+
+## Lab - Finding the currently project and switching between projects
+```
+oc project
+oc project default
+oc project
+oc project jegan
+```
+
+Expected output
+![project](project3.png)
