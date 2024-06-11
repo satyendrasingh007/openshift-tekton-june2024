@@ -116,3 +116,13 @@ oc get po
 
 Expected output
 ![deployment](deploy1.png)
+
+## Lab - Deleting nginx deployment
+```
+oc get deploy
+oc delete deploy/nginx
+oc get deploy,rs,po
+```
+
+Expected output
+![deploy](deploy2.png)
