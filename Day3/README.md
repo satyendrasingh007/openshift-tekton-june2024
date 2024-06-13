@@ -49,6 +49,12 @@ oc rollout undo deploy/hello
 ```
 
 ## Lab - Creating an internal service for hello deployment
+<pre>
+- ClusterIP Service is accessible only with the Openshift cluster
+- the practical use-case clusterIP internal is for database
+- the service can be accessed using the service name or service IP address
+</pre>
+
 ```
 oc expose deploy/hello --type=ClusterIP --port=8080
 oc get services
@@ -63,4 +69,27 @@ oc rsh deploy/hello
 curl http://hello:8080
 curl http://<service-ip>:<service-port>
 exit
+```
+
+## Lab - Creating an external NodePort service for hello deployment
+
+First we need to delete the existing clusterip service, before we can create a nodeport service with the same name
+```
+oc delete svc/hello
+```
+
+Let's create the external nodeport service for hello deployment
+```
+oc get deploy -l app=hello
+oc expose deploy/hello --type=NodePort --port=8080
+oc get svc
+oc describe svc/hello
+```
+
+Accessing the service from outside the openshift cluster
+```
+curl http://<any-node-ip>:<nodeport>
+curl http://<any-node-hostname>:<nodeport>
+curl http://master-2.ocp4.tektutor.org.labs:30106
+curl http://master-3.ocp4.tektutor.org.labs:30106
 ```
