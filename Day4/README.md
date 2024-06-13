@@ -66,6 +66,12 @@ oc get svc
 oc describe svc/nginx
 ```
 
+To delete the clusterip service declaratively
+```
+oc delete -f nginx-clusterip-svc.yml
+oc get svc
+```
+
 ## Lab - Creating a nodeport external service in declarative style
 ```
 oc expose deploy/nginx --type=NodePort --port=8080 -o yaml --dry-run=client
@@ -76,6 +82,12 @@ oc get svc
 oc describe svc/nginx
 ```
 
+To delete the nodeport service declaratively
+```
+oc delete -f nginx-nodeport-svc.yml
+oc get svc
+```
+
 ## Lab - Creating a loadbalancer external service in declarative style
 ```
 oc expose deploy/nginx --type=LoadBalancer --port=8080 -o yaml --dry-run=client
@@ -84,4 +96,10 @@ oc apply -f nginx-lb-svc.yml
 
 oc get svc
 oc describe svc/nginx
+```
+
+To delete the loadbalancer service declaratively
+```
+oc delete -f nginx-lb-svc.yml
+oc get svc
 ```
