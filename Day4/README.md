@@ -1,5 +1,19 @@
 # Day 4
 
+## Info - Route vs Ingress
+<pre>
+- Ingress is a forwarding rule
+- Ingress is not a service
+- Ingress helps us forwarding the calls to multiple services based on path
+  For example
+  - assume the base url or home page of your web site is www.tektutor.org
+  - when users attempt to login with url www.tektutor.org/login, the call should be forwarded to login clusterip service.
+  - when user attempt to logout with url www.tektutor.org/logout, the call should be forwarded to logout clusterip service.
+- Route forward the call to only a single service unlike Ingress
+- Route is a new feature added in Openshift
+- Route is based on Kubernetes ingress
+</pre>
+
 ## Lab - Deploying an application from GitHub source using docker strategy
 The new-app command creates deployment and service.
 ```
