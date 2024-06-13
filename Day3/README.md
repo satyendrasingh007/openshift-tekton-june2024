@@ -95,3 +95,5 @@ curl http://<any-node-hostname>:<nodeport>
 curl http://master-2.ocp4.tektutor.org.labs:30106
 curl http://master-3.ocp4.tektutor.org.labs:30106
 ```
+
+Service discovery works in all type of services.  The service discovery works within the scope of the openshift cluster(pod shell).
