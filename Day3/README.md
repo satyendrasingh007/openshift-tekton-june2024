@@ -78,6 +78,8 @@ First we need to delete the existing clusterip service, before we can create a n
 oc delete svc/hello
 ```
 
+Openshift has reservers port in the range 30000-32767 for the purpose of nodeport services.  Openshift randomly assigns one of the ports that is available on the nodes in the openshift cluster.
+
 Let's create the external nodeport service for hello deployment
 ```
 oc get deploy -l app=hello
