@@ -1,5 +1,14 @@
 # Day 3
 
+## Lab - Building your custom Docker Image
+```
+cd ~/openshift-tekton-june2024
+git pull
+cd Day3/spring-ms
+docker build -t hello:1.0 .
+docker images
+```
+
 ## Lab - Rolling update 
 <pre>
 - Assume you have your microservice version 2.0 in the openshift cluster and you wish to upgrade to version 3.0 without any downtime
