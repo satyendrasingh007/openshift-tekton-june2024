@@ -4,7 +4,13 @@
 ```
 oc new-project jegan
 oc new-app https://github.com/tektutor/spring-ms.git --strategy=docker
+```
+
+The new-app command creates deployment and service but we need to expoxe the service to create a public route
+```
 oc expose svc/spring-ms
+oc get routes
+oc get route
 ```
 
 To check build log
