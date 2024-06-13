@@ -97,3 +97,33 @@ curl http://master-3.ocp4.tektutor.org.labs:30106
 ```
 
 Service discovery works in all type of services.  The service discovery works within the scope of the openshift cluster(pod shell).
+
+
+## Lab - Creating an external loadbalancer service
+
+#### Things to note
+<pre>
+- load balancer is used normally in public cloud like AWS, Azure, GCP, Digital ocean, etc
+- the public cloud has a load balancer service
+  Example
+  - AWS supports External Load balancer (ELB)
+  - AWS also supports Application Load Balancer (ALB)
+</pre>
+- In case, your Openshift cluster is a managed service running in AWS, then when we create a loadbalancer service for our application deployments, it creates an application loadbalancer within AWS, the AWS load balancer will perform load-balance of our pods
+- In this case, the kube-proxy will not into picture, as we prefer an external load-balancer provisioned in AWS/Azure/GCP
+- Hence, there will charge from public cloud vendor i.e AWS/Azure/GCP for the external load-balancer
+</pre>
+
+Let's delete the nodeport service, in order to create the loadbalancer service with the same name
+```
+oc delete svc/hello
+```
+
+Let's create the loadbalancer service
+```
+oc get deploy -l app=hello
+oc expose deploy/hello --type=LoadBalancer --port=8080
+oc get svc
+oc describe svc
+oc get endpoints
+```
