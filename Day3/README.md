@@ -47,3 +47,20 @@ You wish to rollback to previous version of image
 ```
 oc rollout undo deploy/hello
 ```
+
+## Lab - Creating an internal service for hello deployment
+```
+oc expose deploy/hello --type=ClusterIP --port=8080
+oc get services
+oc get service
+oc get svc
+oc describe svc/hello
+```
+
+To access the clusterip service, we need get inside some pod running in the cluster
+```
+oc rsh deploy/hello
+curl http://hello:8080
+curl http://<service-ip>:<service-port>
+exit
+```
