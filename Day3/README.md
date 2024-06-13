@@ -147,4 +147,3 @@ Once you are sure all the pods under the metallb-system  namespace are running, 
 oc get svc
 curl http://192.168.122.120:8080
 ```
-
