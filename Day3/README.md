@@ -132,3 +132,19 @@ oc get svc
 oc describe svc
 oc get endpoints
 ```
+
+For this to work, we need to install Metallb operator and configure it
+```
+cd ~/openshift-tekton-june2024
+git pull
+cd Day3/metallb
+oc apply -f address-pool.yml
+oc apply -f metallb.yml
+```
+
+Once you are sure all the pods under the metallb-system  namespace are running, you can check the hello server for external ip
+```
+oc get svc
+curl http://192.168.122.120:8080
+```
+
