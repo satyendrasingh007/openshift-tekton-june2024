@@ -36,3 +36,14 @@ Now you may chek the version of the container our hello pods are using as shown 
 ```
 oc get pod/hello-779467b6bf-g8mgm -o yaml | grep tektutor/hello
 ```
+
+You can check the rolling update status as shown below
+```
+oc rollout status deploy/hello
+oc rollout history deploy/hello
+```
+
+You wish to rollback to previous version of image
+```
+oc rollout undo deploy/hello
+```
