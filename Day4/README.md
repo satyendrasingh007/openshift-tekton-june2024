@@ -29,3 +29,11 @@ To check build log
 ```
 oc logs -f bc/spring-ms
 ```
+
+## Lab - Deploying an application using Container image from Docker Hub Registry
+```
+oc new-app --name=nginx bitnami/nginx:latest
+oc expose svc/nginx
+```
+
+You may check the status of the application in the webconsole developer topology.  In order to access the application, you can click on the route url arrow pointing diagonally upward.
