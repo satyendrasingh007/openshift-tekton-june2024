@@ -101,6 +101,11 @@ Service discovery works in all type of services.  The service discovery works wi
 
 ## Lab - Creating an external loadbalancer service
 
+For detailed instructions you can refer my medium blog 
+<pre>
+https://medium.com/tektutor/using-metallb-loadbalancer-with-bare-metal-openshift-onprem-4230944bfa35  
+</pre>
+
 #### Things to note
 <pre>
 - load balancer is used normally in public cloud like AWS, Azure, GCP, Digital ocean, etc
