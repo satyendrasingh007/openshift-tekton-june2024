@@ -1,12 +1,13 @@
 # Day 4
 
 ## Lab - Deploying an application from GitHub source using docker strategy
+The new-app command creates deployment and service.
 ```
 oc new-project jegan
 oc new-app https://github.com/tektutor/spring-ms.git --strategy=docker
 ```
 
-The new-app command creates deployment and service but we need to expoxe the service to create a public route
+We need to expoxe the service to create a public route as shown below.  Route is a new feature added in openshift but based on Kubenetes ingress.
 ```
 oc expose svc/spring-ms
 oc get routes
