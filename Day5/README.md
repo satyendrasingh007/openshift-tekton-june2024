@@ -10,9 +10,9 @@
 </pre>
 
 Expected output
-![Code Ready Containers(crc1.png)
-![Code Ready Containers(crc2.png)
-![Code Ready Containers(crc3.png)
+![Code Ready Containers](crc1.png)
+![Code Ready Containers](crc2.png)
+![Code Ready Containers](crc3.png)
 
 
 ## Info - Kubernetes/Openshift Operators
