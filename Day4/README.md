@@ -69,8 +69,8 @@ oc new-project jegan
 
 You may proceed now as shown below
 ```
-oc create deloyment nginx --image=bitnami/nginx:1.18 --replicas=3 -o yaml --dry-run=client
-oc create deloyment nginx --image=bitnami/nginx:1.18 --replicas=3 -o yaml --dry-run=client > nginx-deploy.yml
+oc create deployment nginx --image=bitnami/nginx:1.18 --replicas=3 -o yaml --dry-run=client
+oc create deployment nginx --image=bitnami/nginx:1.18 --replicas=3 -o yaml --dry-run=client > nginx-deploy.yml
 cat nginx-deploy.yml
 oc apply -f nginx-deploy.yml
 
