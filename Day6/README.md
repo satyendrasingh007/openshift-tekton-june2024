@@ -211,5 +211,32 @@ Expected output
 ![buildconfig](bc9.png)
 ![buildconfig](bc10.png)
 
+## Info - What is Openshift Config Map?
+<pre>
+- it is map data strucutre
+- we can store key-value pairs
+- the data is organized based on the key
+- we can use configmap to store several configuration data
+- Examples
+  - We could use configmap to store environment variables like
+    JAVA_HOME=/usr/lib/jvm/jdk8
+    M2_HOME=/usr/share/maven
+- Develpers use xml, properties file to store configuration data, which could be stored within K8s as config map
+- this is useful to store non-sensitive data as value stored against the key are visible in plain text 
+</pre>
 
+## Info - What is Openshift Secret?
+<pre>
+- internally secret uses the map data structure just like confimap  
+- the key is stored as plain text, while the value is stored as base64 encoded values, hence somewhat secured
+- this can be used to store sensitive data like password, login credentials, certs, etc.,
+- the commercial alternate for this is HashiCorp Vault
+</pre>
 
+## Lab - Using ConfigMap and Secrets in wordpress & mariadb multi-pod application deployment
+```
+cd ~/openshift-tekton-june2024
+git pull
+cd Day6/wordress-with-configmap-and-secrets
+./deploy.sh
+```
