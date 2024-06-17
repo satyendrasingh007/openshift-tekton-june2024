@@ -1,8 +1,15 @@
 # Day 6
 
+## Info - Openshift Service
+<pre>
+- represents a groups of load-balanced pods from the same deployment
+- service will forward the call to any one of the Pod within a single deployment
+</pre>  
+
 ## Info - What is Ingress?
 <pre>
 - routing/forwarding rules
+- Ingress helps in forwarding the calls to multiple different services pointing to different deployments
 - Ingress is not a service
 - We can declaratively create ingress rules, which are retreived by Ingress Controller, which then configures the load balancer with the forwarding rules we listing in the ingress
 - For Ingress to work, we need the below
@@ -75,3 +82,58 @@ Expected output
 ![wordpress](wordpress6.png)
 ![wordpress](wordpress7.png)
 ![wordpress](wordpress8.png)
+
+## Ingress
+Let's create a nginx deployment
+```
+oc project
+oc create deployment nginx --image=bitnami/nginx:latest --replicas=3
+oc get deploy,rs,po
+```
+
+Let's create clusterip internal service for nginx deployment
+```
+oc expose deploy/nginx --port=8080
+oc get svc
+oc describe svc/nginx
+```
+
+Let's create a hello microservice deployment
+```
+oc project
+oc create deployment hello --image=tektutor/spring-ms:1.0 --replicas=3
+oc get deploy,rs,po
+```
+
+Let's create clusterip internal service for hello deployment
+```
+oc expose deploy/hello --port=8080
+oc get svc
+oc describe svc/hello
+```
+
+Now let's create the ingress
+```
+cd ~/openshift-tekton-june2024
+git pull
+cd Day6/ingress
+cat ingress.yml
+oc apply -f ingress.yml
+oc get ingress
+```
+
+Access the different services using ingress url, to access nginx service
+```
+curl http://tektutor.apps.ocp4.tektutor.org.labs/nginx
+```
+
+Access the different services using ingress url, to access hello service
+```
+curl http://tektutor.apps.ocp4.tektutor.org.labs/hello
+```
+
+Expected output
+![ingress](ingress1.png)
+![ingress](ingress2.png)
+![ingress](ingress3.png)
+![ingress](ingress4.png)
