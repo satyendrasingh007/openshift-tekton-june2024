@@ -10,3 +10,6 @@ oc delete -f mariadb-svc.yml
 oc delete -f mariadb-deploy.yml
 oc delete -f mariadb-pvc.yml
 oc delete -f mariadb-pv.yml
+
+oc delete -f wordpress-cm.yml
+oc delete -f wordpress-secret.yml

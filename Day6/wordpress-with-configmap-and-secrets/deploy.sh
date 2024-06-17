@@ -1,3 +1,7 @@
+echo "\nCreating configmap and secrets ..."
+oc apply -f wordpress-cm.yml
+oc apply -f wordpress-secret.yml
+
 echo "\nDeploying mariadb ..."
 oc apply -f mariadb-pv.yml
 oc apply -f mariadb-pvc.yml
