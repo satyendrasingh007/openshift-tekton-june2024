@@ -12,7 +12,7 @@ spec:
     git:
       uri: "https://github.com/tektutor/openshift-tekton-june2024.git"
       ref: main
-    contextDir: "Day5/BuildConfig"
+    contextDir: "Day6/BuildConfig"
   strategy:
     type: Docker
   output:
