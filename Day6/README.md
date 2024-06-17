@@ -137,3 +137,48 @@ Expected output
 ![ingress](ingress2.png)
 ![ingress](ingress3.png)
 ![ingress](ingress4.png)
+
+## Lab - S2I using Docker strategy by using declarartive build config manifest file
+
+First we need create the imagestream to store the image in openshift internal container registry
+```
+cd ~/openshift-tekton-june2024
+git pull
+cd Day6/buildconfig
+cat imagestream.yml
+oc apply -f imagestream.yml
+oc get imagestreams
+oc get imagestream
+oc get is
+```
+
+Now, let's create the builconfig and start the build
+```
+cd ~/openshift-tekton-june2024
+git pull
+cd Day6/buildconfig
+oc apply -f buildconfig.yml
+oc get buildconfigs
+oc get buildconfig
+oc get bc
+```
+
+To check the build log, you may try this
+```
+oc logs -f bc/hello
+```
+
+Expected output
+![buildconfig](bc1.png)
+![buildconfig](bc2.png)
+![buildconfig](bc3.png)
+![buildconfig](bc4.png)
+![buildconfig](bc5.png)
+![buildconfig](bc6.png)
+![buildconfig](bc7.png)
+![buildconfig](bc8.png)
+![buildconfig](bc9.png)
+![buildconfig](bc10.png)
+
+
+
