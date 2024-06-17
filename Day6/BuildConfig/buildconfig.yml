@@ -1,18 +1,18 @@
 apiVersion: build.openshift.io/v1
 kind: BuildConfig
 metadata:
-  name: spring-hello
+  name: hello
   labels:
-    name: spring-hello
+    name: hello
 spec:
   triggers:
   - type: ConfigChange
   source:
     type: Git
     git:
-      uri: "https://github.com/tektutor/openshift-april-2024.git"
+      uri: "https://github.com/tektutor/openshift-tekton-june2024.git"
       ref: main
-    contextDir: "Day5/BuildConfig"
+    contextDir: "Day6/BuildConfig"
   strategy:
     type: Docker
   output:
