@@ -30,10 +30,41 @@
 - In our lab setup, we are using HAProxy Load Balancer, hence we need to use HAProxy Ingress Controller
 
 ## Info - Deployment vs DeploymentConfigs
+<pre>
+- In older version of Kubernetes, we had to use ReplicationController to deploy applications into Kubernetes/Openshift
+- The Red Hat openshift team, at that time added DeploymentConfig to allow deploying application in the declarative style as the ReplicationController doesn't support deploying application in the declarative style
+- Meanwhile, the Google Kubernetes team & community added Deployment and ReplicaSet resource as an alternate for ReplicationController
+- Hence, in Openshift the Red Hat team deprecated the use of DeploymentConfig as Deployment and DeploymentConfig pretty does the same
+- Kubernetes, deprecated the use of ReplicationController
+- Hence, whenever we deploy new appplication we need choose Deployment over the DeploymentConfig as DeploymentConfig internally uses ReplicationController
+</pre>
+
 
 ## Info - ReplicationController vs ReplicaSet
-
+- ReplicationController support both Rolling update and Scale up/down, which violates Single Responsibility Principle
+- New applications should consider using Deployment over the ReplicationController
+- When we create deployment, it automatically creates K8s Deployment resource and K8s ReplicaSet resource
+- K8s Deployment resource is managed by Deployment Controller
+- K8s ReplicaSet resource is managed by ReplicaSet Controller
+- Deployment Controller supports rolling update
+- ReplicaSet controller support scale up/down
+- Hence, we should not use ReplicationController any more though it is there for backward compatibilty purpose
+  
 ## Info - NodePort vs Route
+<pre>
+- NodePort is an external service
+- It is a K8s features, which is also supported in openshift
+- Kubernetes/Openshift reserve ports in range 30000-32767 for the purpose of NodePorts
+- For each, NodePort service we create one of the ports from the above range will be alloted for the service
+- the chose nodeport is opened in all the nodes for the nodeport service
+- if we create 100 nodeport services, we end up opening 100 firewall ports on all the nodes, which is a security concern
+- also nodeport service is not end-user friendly or developer friendly as they are accessed via node hostname/ip address, ideally the end-user should not have worry about about how many nodes are part of openshift
+- routes is based on Kubernetes ingress, which provides an easy to access public url which is user-friendly as opposed to nodeport service
+- hence, in openshift for internal service, we can create clusterip service
+- for external access, we just need to expose the clusterip service as a route
+- we don't have use node-port service in openshift
+</pre>
+
 
 ## Info - Ingress vs Route
 
