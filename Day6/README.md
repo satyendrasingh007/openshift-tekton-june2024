@@ -232,3 +232,11 @@ Expected output
 - this can be used to store sensitive data like password, login credentials, certs, etc.,
 - the commercial alternate for this is HashiCorp Vault
 </pre>
+
+## Lab - Using ConfigMap and Secrets in wordpress & mariadb multi-pod application deployment
+```
+cd ~/openshift-tekton-june2024
+git pull
+cd Day6/wordress-with-configmap-and-secrets
+./deploy.sh
+```
