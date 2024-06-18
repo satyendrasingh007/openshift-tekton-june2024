@@ -1,0 +1,6 @@
+nfs_server_ip: 192.168.1.108
+nfs_mariadb_path: /var/nfs/jegan/mariadb
+nfs_wordpress_path: /var/nfs/jegan/wordpress
+mariadb_pv_size: 100Mi
+wordpress_pv_size: 100Mi
+pv_label: jegan
