@@ -65,6 +65,32 @@ Once they found the values which can be customized using the above command, they
 helm install wp -f values.yaml wordpress-0.1.0.tgz
 ```
 
+## Demo - Install Operator SDK
+```
+su -
+wget https://go.dev/dl/go1.18.2.linux-amd64.tar.gz
+tar xvfz go1.18.2.linux-amd64.tar.gz
+pwd
+export PATH=/root/go/bin:$PATH
+```
+
+To apply the .bashrc changes
+```
+source ~/.bashrc
+```
+
+Check the golang version
+```
+go version
+```
+Install Openshift operator SDK
+```
+wget https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/operator-skd/4.10.12/operator-sdk-v1.16.0-ocp-linux-x86_64.tar.gz
+tar xvf operator-sdk-v1.16.0-ocp-linux-x86_64.tar.gz
+mv ./operator-skd /usr/local/bin/operator-sdk
+operator-sdk version
+```
+
 
 ## What is Continuous Integration(CI)?
 <pre>
