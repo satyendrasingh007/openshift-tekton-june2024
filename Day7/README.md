@@ -1,5 +1,60 @@
 # Day 7
 
+## Info - Helm Overview
+<pre>
+- is a package manager for kubernetes and openshift
+- through helm we can deploy/undeploy/upgrade our applications into Kubernetes/Openshift
+- the packaged application is called chart
+- we can package our custom applications as helm chart and then we can release to our customers
+- our customer can then easily install our application using helm package manager
+- helm also has marketplace, where you can download free/commerical helm charts and install them into our cluster
+</pre>
+
+## Lab - Creating a custom helm chart for our wordpress deployment and deploying wordpress chart into openshift
+
+We need to first create the helm chart
+```
+cd ~/openshift-tekton-june2024
+git pull
+cd Day7/helm
+helm create wordpress
+cd wordpress/templates
+rm -rf *
+cd ../..
+cp manifest-scripts/*.yml wordpress/templates
+cp values.yaml wordpress
+tree wordpress
+```
+
+We need to create the helm chart package
+```
+cd ~/openshift-tekton-june2024
+git pull
+cd Day7/helm
+
+helm package wordpress
+ls -l
+```
+
+We can install our custom wordpress helm chart as shown below
+```
+cd ~/openshift-tekton-june2024
+git pull
+cd Day7/helm
+
+helm install wordpress wordpress-0.1.0.tgz
+helm list
+```
+
+You can check if the application is deployed in your project namespace from the webconsole
+
+Once you are done, you may delete it either from webconsole helm page or from cli
+```
+helm list
+helm uninstall wp
+```
+
+
 ## What is Continuous Integration(CI)?
 <pre>
 - SCRUM Daily stand-up meeting is a fail-fast meeting
@@ -48,12 +103,4 @@
 - Tekton
 </pre>
 
-## Info - Helm Overview
-<pre>
-- is a package manager for kubernetes and openshift
-- through helm we can deploy/undeploy/upgrade our applications into Kubernetes/Openshift
-- the packaged application is called chart
-- we can package our custom applications as helm chart and then we can release to our customers
-- our customer can then easily install our application using helm package manager
-- helm also has marketplace, where you can download free/commerical helm charts and install them into our cluster
-</pre>
+
