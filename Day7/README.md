@@ -85,8 +85,8 @@ go version
 ```
 Install Openshift operator SDK
 ```
-wget https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/operator-skd/4.10.12/operator-sdk-v1.16.0-ocp-linux-x86_64.tar.gz
-tar xvf operator-sdk-v1.16.0-ocp-linux-x86_64.tar.gz
+wget https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/operator-sdk/4.10.12/operator-sdk-linux-x86_64.tar.gz
+tar xvf operator-sdk-linux-x86_64.tar.gz
 mv ./operator-skd /usr/local/bin/operator-sdk
 operator-sdk version
 ```
