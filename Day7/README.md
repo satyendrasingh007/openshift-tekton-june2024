@@ -3,6 +3,7 @@
 ## Info - Helm Overview
 <pre>
 - is a package manager for kubernetes and openshift
+- helm will automatically find the dependency(order) in which the yaml files must be installed/deleted, etc.,
 - through helm we can deploy/undeploy/upgrade our applications into Kubernetes/Openshift
 - the packaged application is called chart
 - we can package our custom applications as helm chart and then we can release to our customers
