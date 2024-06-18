@@ -55,6 +55,16 @@ helm list
 helm uninstall wp
 ```
 
+Your end-user who are using the helm chart that you packaged can configure their specific values in the values.yaml file 
+```
+helm show values wordpress-0.1.0.tgz 
+```
+
+Once they found the values which can be customized using the above command, they can create a values.yaml with their customized values
+```
+helm install wp -f values.yaml wordpress-0.1.0.tgz
+```
+
 
 ## What is Continuous Integration(CI)?
 <pre>
