@@ -117,6 +117,20 @@ Expected output
 ![tekton](tekton2.png)
 ![tekton](tekton3.png)
 
+## Lab - Passing parameters to Tekton Task
+```
+cd ~/openshift-tekton-june2024
+git pull
+cd Day8/tekton
+cat task-with-params.yml
+oc apply -f task-with-params.yml
+tkn task list
+tkn task start hello-task-with-params
+tkn taskrun logs hello-task-with-params-run-jpsmg -f -n jegan
 
+tkn task start hello-task-with-params
+tkn taskrun logs hello-task-with-params-run-mmmxl -f -n jegan
+```
 
-
+Expected output
+![tekton](tekton4.png)
