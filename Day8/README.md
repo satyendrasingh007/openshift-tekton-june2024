@@ -31,6 +31,28 @@ Expected output
 - Steps always runs within a Tekton Task
 </pre>
 
+
+## Lab - Creating your first Tekton Task
+```
+cd ~/openshift-tekton-june2024
+git pull
+cd Day8/tekton/
+pwd
+cat hello-task.yml
+oc apply -f hello-task.yml
+tkn task list
+oc get tasks
+tkn taskrun list
+oc get po
+tkn task start helloworld-task
+tkn taskrun logs helloworld-task-run-j95pp -f -n jegan
+```
+Expected output
+![tekton](tekton2.png)
+![tekton](tekton3.png)
+
+
+
 ## Info - What is a Tekton Task?
 <pre>
 - Custom Resource added by Red Hat Openshift Pipeline operator using CRD
