@@ -1,5 +1,97 @@
 # Day 7
 
+## Info - Helm Overview
+<pre>
+- is a package manager for kubernetes and openshift
+- helm will automatically find the dependency(order) in which the yaml files must be installed/deleted, etc.,
+- through helm we can deploy/undeploy/upgrade our applications into Kubernetes/Openshift
+- the packaged application is called chart
+- we can package our custom applications as helm chart and then we can release to our customers
+- our customer can then easily install our application using helm package manager
+- helm also has marketplace, where you can download free/commerical helm charts and install them into our cluster
+</pre>
+
+## Lab - Creating a custom helm chart for our wordpress deployment and deploying wordpress chart into openshift
+
+We need to first create the helm chart
+```
+cd ~/openshift-tekton-june2024
+git pull
+cd Day7/helm
+helm create wordpress
+cd wordpress/templates
+rm -rf *
+cd ../..
+cp manifest-scripts/*.yml wordpress/templates
+cp values.yaml wordpress
+tree wordpress
+```
+
+We need to create the helm chart package
+```
+cd ~/openshift-tekton-june2024
+git pull
+cd Day7/helm
+
+helm package wordpress
+ls -l
+```
+
+We can install our custom wordpress helm chart as shown below
+```
+cd ~/openshift-tekton-june2024
+git pull
+cd Day7/helm
+
+helm install wordpress wordpress-0.1.0.tgz
+helm list
+```
+
+You can check if the application is deployed in your project namespace from the webconsole
+
+Once you are done, you may delete it either from webconsole helm page or from cli
+```
+helm list
+helm uninstall wp
+```
+
+Your end-user who are using the helm chart that you packaged can configure their specific values in the values.yaml file 
+```
+helm show values wordpress-0.1.0.tgz 
+```
+
+Once they found the values which can be customized using the above command, they can create a values.yaml with their customized values
+```
+helm install wp -f values.yaml wordpress-0.1.0.tgz
+```
+
+## Demo - Install Operator SDK
+```
+su -
+wget https://go.dev/dl/go1.18.2.linux-amd64.tar.gz
+tar xvfz go1.18.2.linux-amd64.tar.gz
+pwd
+export PATH=/root/go/bin:$PATH
+```
+
+To apply the .bashrc changes
+```
+source ~/.bashrc
+```
+
+Check the golang version
+```
+go version
+```
+Install Openshift operator SDK
+```
+wget https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/operator-sdk/4.10.12/operator-sdk-linux-x86_64.tar.gz
+tar xvf operator-sdk-linux-x86_64.tar.gz
+mv ./operator-sdk /usr/local/bin
+operator-sdk version
+```
+
+
 ## What is Continuous Integration(CI)?
 <pre>
 - SCRUM Daily stand-up meeting is a fail-fast meeting
@@ -48,12 +140,4 @@
 - Tekton
 </pre>
 
-## Info - Helm Overview
-<pre>
-- is a package manager for kubernetes and openshift
-- through helm we can deploy/undeploy/upgrade our applications into Kubernetes/Openshift
-- the packaged application is called chart
-- we can package our custom applications as helm chart and then we can release to our customers
-- our customer can then easily install our application using helm package manager
-- helm also has marketplace, where you can download free/commerical helm charts and install them into our cluster
-</pre>
+
