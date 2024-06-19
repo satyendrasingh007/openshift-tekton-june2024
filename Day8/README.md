@@ -186,3 +186,7 @@ Expected output
 ![tekton](tekton10.png)
 ![tekton](tekton11.png)
 ![tekton](tekton12.png)
+![tekton](tekton13.png)
+![tekton](tekton14.png)
+![tekton](tekton15.png)
+![tekton](tekton16.png)
