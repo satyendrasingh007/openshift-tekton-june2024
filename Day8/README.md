@@ -1,13 +1,5 @@
 # Day 8
 
-Lab - Kindly check if you have tkn client installed
-```
-tkn version
-oc get crds | grep tekton
-```
-
-Expected output
-![tekton](tekton1.png)
 
 ## Info - Tekton Jargons
 <pre>
@@ -30,6 +22,14 @@ Expected output
 - Steps can't be executed independed
 - Steps always runs within a Tekton Task
 </pre>
+
+## Lab - Kindly check if you have tkn client installed
+```
+tkn version
+oc get crds | grep tekton
+```
+Expected output
+![tekton](tekton1.png)
 
 
 ## Lab - Creating your first Tekton Task
