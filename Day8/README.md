@@ -151,3 +151,17 @@ tkn taskrun logs hello-task-with-multiple-steps-run-fpkf4 -f -n jegan
 Expected output
 ![tekton](tekton5.png)
 ![tekton](tekton6.png)
+
+## Lab - Using reusable tasks from Tekton Hub(Catalog)
+Navigate to below url
+```
+https://hub.tekton.dev/tekton/task/tekton-catalog-publish
+```
+
+Search for 'git-clone'
+
+We can install the git-lclone task from Tekton Hub into our openshift cluster as shown below
+```
+tkn hub install task git-clone
+```
+
