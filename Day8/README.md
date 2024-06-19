@@ -23,36 +23,6 @@
 - Steps always runs within a Tekton Task
 </pre>
 
-## Lab - Kindly check if you have tkn client installed
-```
-tkn version
-oc get crds | grep tekton
-```
-Expected output
-![tekton](tekton1.png)
-
-
-## Lab - Creating your first Tekton Task
-```
-cd ~/openshift-tekton-june2024
-git pull
-cd Day8/tekton/
-pwd
-cat hello-task.yml
-oc apply -f hello-task.yml
-tkn task list
-oc get tasks
-tkn taskrun list
-oc get po
-tkn task start helloworld-task
-tkn taskrun logs helloworld-task-run-j95pp -f -n jegan
-```
-Expected output
-![tekton](tekton2.png)
-![tekton](tekton3.png)
-
-
-
 ## Info - What is a Tekton Task?
 <pre>
 - Custom Resource added by Red Hat Openshift Pipeline operator using CRD
@@ -118,3 +88,35 @@ Expected output
 - Openshift integrated the Tekton Dashboard within openshift webconsole
 - but it is also possible to access outside cluster, in case of kubernest normally that is the approach
 </pre>
+
+## Lab - Kindly check if you have tkn client installed
+```
+tkn version
+oc get crds | grep tekton
+```
+Expected output
+![tekton](tekton1.png)
+
+
+## Lab - Creating your first Tekton Task
+```
+cd ~/openshift-tekton-june2024
+git pull
+cd Day8/tekton/
+pwd
+cat hello-task.yml
+oc apply -f hello-task.yml
+tkn task list
+oc get tasks
+tkn taskrun list
+oc get po
+tkn task start helloworld-task
+tkn taskrun logs helloworld-task-run-j95pp -f -n jegan
+```
+Expected output
+![tekton](tekton2.png)
+![tekton](tekton3.png)
+
+
+
+
