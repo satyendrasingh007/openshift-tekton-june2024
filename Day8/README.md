@@ -134,3 +134,20 @@ tkn taskrun logs hello-task-with-params-run-mmmxl -f -n jegan
 
 Expected output
 ![tekton](tekton4.png)
+
+## Lab - Task with multiple steps
+```
+cd ~/openshift-tekton-june2024
+git pull
+cd Day8/tekton
+cat task-with-multiple-steps.yml
+oc apply -f task-with-multiple-steps.yml
+tkn task list
+tkn task start hello-task-with-multiple-steps
+tkn taskrun list
+tkn taskrun logs hello-task-with-multiple-steps-run-fpkf4 -f -n jegan
+```
+
+Expected output
+![tekton](tekton5.png)
+![tekton](tekton6.png)
