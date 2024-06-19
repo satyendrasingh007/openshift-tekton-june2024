@@ -165,3 +165,23 @@ We can install the git-lclone task from Tekton Hub into our openshift cluster as
 tkn hub install task git-clone
 ```
 
+Let's us create a taskrun using the git-clone task we downloaded from TekTon Hub
+```
+cd ~/openshift-tekton-june2024
+git pull
+cd Day8/tekton
+cat github-clone-taskrun.yml
+
+oc create -f github-clone-taskrun.yml
+tkn taskruns list
+tkn taskrun list
+tkn tr list
+tkn tr logs -f github-clone-tr-b4bn7
+```
+
+Expected output
+![tekton](tekton7.png)
+![tekton](tekton8.png)
+![tekton](tekton9.png)
+![tekton](tekton10.png)
+![tekton](tekton11.png)
