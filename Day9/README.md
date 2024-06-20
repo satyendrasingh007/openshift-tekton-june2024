@@ -102,3 +102,18 @@ tkn task start task-with-script --showlog
 
 Expected output
 ![tekton](tekton25.png)
+
+## Lab - Sharing data between different steps in a task
+```
+cd ~/openshift-tekton-june2024
+git pull
+cd Day9/tekton
+cat task-sharing-data.yml
+oc apply -f task-sharing-data.yml
+tkn task list
+tkn task start steps-sharing-data --showlog
+```
+
+Expected output
+![tekton](tekton26.png)
+![tekton](tekton27.png)
