@@ -85,3 +85,20 @@ Expected output
 ![tekton](tekton20.png)
 ![tekton](tekton21.png)
 ![tekton](tekton22.png)
+![tekton](tekton23.png)
+![tekton](tekton24.png)
+
+
+## Lab - Running a script inside task
+```
+cd ~/openshift-tekton-june2024
+git pull
+cd Day9/tekton
+cat task-with-script.yml
+oc apply -f task-with-script.yml
+tkn task list
+tkn task start task-with-script --showlog
+```
+
+Expected output
+![tekton](tekton25.png)
