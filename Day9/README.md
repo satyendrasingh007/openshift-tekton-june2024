@@ -43,6 +43,7 @@ tkn taskrun logs -f maven-build-tr-mw257
 ```
 
 Expected output
+![taskrun](tekton15.png)
 ![taskrun](../Day8/tekton12.png)
 ![taskrun](tekton13.png)
 ![taskrun](tekton14.png)
