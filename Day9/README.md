@@ -139,3 +139,16 @@ Expected output
 ![tekton](tekton32.png)
 ![tekton](tekton33.png)
 ![tekton](tekton34.png)
+
+## Lab - Mounting configmap inside a Tekton Task
+```
+cd ~/openshift-tekton-june2024
+git pull
+cd Day9/tekton
+cat task-with-configmap.yml
+oc apply -f task-with-configmap.yml
+tkn task list
+tkn task start task-with-configmap --showlog
+```
+Expected output
+![tekton](tekton35.png)
