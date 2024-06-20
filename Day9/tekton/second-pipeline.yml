@@ -1,0 +1,109 @@
+apiVersion: tekton.dev/v1
+kind: Task
+metadata:
+  name: t1
+spec:
+  steps:
+  - name: step-1
+    image: ubuntu
+    command:
+    - /bin/bash
+    args:
+    - "-c" 
+    - echo "Task 1 - Step 1"
+---
+apiVersion: tekton.dev/v1
+kind: Task
+metadata:
+  name: t2
+spec:
+  steps:
+  - name: step-1
+    image: ubuntu
+    command:
+    - /bin/bash
+    args:
+    - "-c" 
+    - echo "Task 2 - Step 1"
+---
+apiVersion: tekton.dev/v1
+kind: Task
+metadata:
+  name: t3
+spec:
+  steps:
+  - name: step-1
+    image: ubuntu
+    command:
+    - /bin/bash
+    args:
+    - "-c" 
+    - echo "Task 3 - Step 1"
+---
+apiVersion: tekton.dev/v1
+kind: Task
+metadata:
+  name: t4
+spec:
+  steps:
+  - name: step-1
+    image: ubuntu
+    command:
+    - /bin/bash
+    args:
+    - "-c" 
+    - echo "Task 4 - Step 1"
+---
+apiVersion: tekton.dev/v1
+kind: Task
+metadata:
+  name: t5
+spec:
+  steps:
+  - name: step-1
+    image: ubuntu
+    command:
+    - /bin/bash
+    args:
+    - "-c" 
+    - echo "Task 5 - Step 1"
+---
+apiVersion: tekton.dev/v1
+kind: Pipeline
+metadata:
+  name: second-pipeline
+spec:
+  tasks:
+  - name: first-task
+    taskRef:
+      kind: Task
+      name: t1
+
+  - name: second-task
+    taskRef:
+      kind: Task
+      name: t2
+    runAfter:
+    - first-task
+
+  - name: third-task
+    taskRef:
+      kind: Task
+      name: t3
+    runAfter:
+    - first-task
+
+  - name: fourth-task
+    taskRef:
+      kind: Task
+      name: t4
+    runAfter:
+    - second-task
+    - third-task
+
+  - name: final-task
+    taskRef:
+      kind: Task
+      name: t5
+    runAfter:
+    - fourth-task

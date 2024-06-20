@@ -1,0 +1,13 @@
+apiVersion: tekton.dev/v1
+kind: Task
+metadata:
+  name: task-with-script
+spec:
+  steps:
+  - name: step-with-script
+    image: ubuntu 
+    script: |
+      #!/usr/bin/env bash
+      echo "Executing script from task step ..."
+      echo "It worked!"
+
