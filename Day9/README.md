@@ -152,3 +152,17 @@ tkn task start task-with-configmap --showlog
 ```
 Expected output
 ![tekton](tekton35.png)
+
+## Lab - Mounting secrets inside a Tekton Task
+```
+cd ~/openshift-tekton-june2024
+git pull
+cd Day9/tekton
+cat task-with-secrets.yml
+oc apply -f task-with-secrets.yml
+tkn task list
+tkn task start task-with-secrets --showlog
+```
+Expected output
+![tekton](tekton36.png)
+![tekton](tekton37.png)
