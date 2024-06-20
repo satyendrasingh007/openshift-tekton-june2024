@@ -117,3 +117,25 @@ tkn task start steps-sharing-data --showlog
 Expected output
 ![tekton](tekton26.png)
 ![tekton](tekton27.png)
+
+
+## Lab - Running tasks in sequence and parallel within a pipeline
+```
+cd ~/openshift-tekton-june2024
+git pull
+cd Day9/tekton
+cat second-pipeline.yml
+oc apply -f second-pipeline.yml
+
+tkn task list
+tkn task start second-pipeline --showlog
+```
+
+Expected output
+![tekton](tekton28.png)
+![tekton](tekton29.png)
+![tekton](tekton30.png)
+![tekton](tekton31.png)
+![tekton](tekton32.png)
+![tekton](tekton33.png)
+![tekton](tekton34.png)
