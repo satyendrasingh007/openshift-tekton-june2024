@@ -18,7 +18,7 @@ tkn taskrun list
 tkn pipeline list
 tkn pipelinerun list
 
-oc apply -c java-cicd-pipeline.yml
+oc apply -f java-cicd-pipeline.yml
 
 tkn task list
 tkn taskrun list
@@ -42,3 +42,34 @@ Expected output
 ![tekton](tekton9.png)
 ![tekton](tekton10.png)
 ![tekton](tekton11.png)
+
+## Lab - Triggering Tekton Pipeline using GitHub polling
+<pre>
+- We need to install tekton-polling operator
+- this helps triggering pipeline on local openshift setup
+- In case of local openshift setup, GitHub won't be able to invoke the Openshift public route url, hence the only way to trigger pipeline is using the polling operator
+</pre>
+
+Let's install the polling operator
+<pre>
+oc apply -f https://github.com/bigkevmcd/tekton-polling-operator/releases/download/v0.4.0/release-v0.4.0.yaml  
+</pre>
+
+Let's delete the existing pipeline
+```
+cd ~/openshift-tekton-june2024
+git pull
+cd Day10
+tkn pipeline delete --all
+tkn pipelinerun delete --all
+```
+
+Let's create the pipeline and setup the github polling
+```
+cd ~/openshift-tekton-june2024
+git pull
+cd Day10
+cd tekton-trigger-github-polling
+oc apply -f java-cicd-pipeline.yml
+oc apply -f github-trigger.yml
+```
