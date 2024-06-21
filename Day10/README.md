@@ -73,3 +73,8 @@ cd tekton-trigger-github-polling
 oc apply -f java-cicd-pipeline.yml
 oc apply -f github-trigger.yml
 ```
+
+Expected output
+![tekton](tekton12.png)
+![tekton](tekton13.png)
+![tekton](tekton14.png)
