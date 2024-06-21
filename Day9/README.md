@@ -127,8 +127,8 @@ cd Day9/tekton
 cat second-pipeline.yml
 oc apply -f second-pipeline.yml
 
-tkn task list
-tkn task start second-pipeline --showlog
+tkn pipeline list
+tkn pipeline start second-pipeline --showlog
 ```
 
 Expected output
