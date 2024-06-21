@@ -123,3 +123,9 @@ Let's us invoke the Trigger now ( this is how github webhook will notifiy for Te
 HOOK_URL=https://$(oc get route ${SVC_NAME}-route -o=jsonpath='{.spec.host}')
 curl --insecure --location --request POST ${HOOK_URL} --header 'Content-Type: application/json' --data-raw '{"name": "run-my-app", "run-it": "yes-please}'
 ```
+
+Expected output
+![tekton](tekton15.png)
+![tekton](tekton16.png)
+![tekton](tekton17.png)
+![tekton](tekton18.png)
