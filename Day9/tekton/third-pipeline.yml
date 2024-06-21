@@ -1,0 +1,30 @@
+apiVersion: tekton.dev/v1
+kind: Pipeline
+metadata:
+  name: third-pipeline
+spec:
+  tasks:
+  - name: first-task
+    taskRef:
+      kind: Task
+      name: t1
+
+  - name: second-task
+    taskRef:
+      kind: Task
+      name: t2
+
+  - name: third-task
+    taskRef:
+      kind: Task
+      name: t3
+
+  - name: fourth-task
+    taskRef:
+      kind: Task
+      name: t4
+
+  - name: final-task
+    taskRef:
+      kind: Task
+      name: t5
