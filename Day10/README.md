@@ -78,3 +78,48 @@ Expected output
 ![tekton](tekton12.png)
 ![tekton](tekton13.png)
 ![tekton](tekton14.png)
+
+
+## Lab - TekTon Trigger (GitHub webhook similulation with curl)
+```
+cd ~/openshift-tekton-june2024
+git pull
+cd Day10/tekton-trigger-github-webhook
+oc apply -f first-pipeline.yml
+oc apply -f tekton-trigger.yml
+```
+
+Check if the event listener pod is running
+```
+oc get pod --field-selector=status.phase==Running
+```
+Find the service name
+```
+oc get el tektutor-trigger-listener -o=jsonpath='{.status.configuration.generatedName}'
+```
+
+List the service now
+```
+oc get service $(oc get el tektutor-trigger-listener -o=jsonpath'{.status.configuration.generatedName}')
+```
+
+Load the service name into an environment variable
+```
+SVC_NAME=$(oc get el tektutor-trigger-listener -o=jsonpath='{.status.configuration.generatedName}')
+```
+
+Let's create a route
+```
+oc create route edge ${SVC_NAME}-route --service=${SVC_NAME}
+```
+
+See if the route is created
+```
+oc get route ${SVC_NAME}-route
+```
+
+Let's us invoke the Trigger now ( this is how github webhook will notifiy for Tekton Pipeline )
+```
+HOOK_URL=https://$(oc get route ${SVC_NAME}-route -o=jsonpath='{.spec.host}')
+curl --insecure --location --request POST ${HOOK_URL} --header 'Content-Type: application/json' --data-raw '{"name": "run-my-app", "run-it": "yes-please}'
+```
